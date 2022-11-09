@@ -48,9 +48,9 @@ for t in tupla:
     print(t)
 
 #Metodos de tuplas
-l = (1,2,3,3,3,4,5)
-print(l.count(3)) #me dice el numero de veces que aparece en la tupla dicho elemento 3
+l = (1, 2, 3, 3, 3, 4, 5)
+print(l.count(3))                 # me dice el numero de veces que aparece en la tupla dicho elemento 3
 
-print(l.index(3)) #busca el objeto que se le pasa como parámetro y devuelve el indice de su pos, o valueError si no lo encuentra
-print(l.index(3, 3)) # me busca el objeto, y el segundo parametro me dice a partir de que indice empezara a buscar el objeto
+print(l.index(3))                 # busca el objeto que se le pasa como parámetro y devuelve el indice de su pos, o valueError si no lo encuentra
+print(l.index(3, 3))              # me busca el objeto, y el segundo parametro me dice a partir de que indice empezara a buscar el objeto
 

@@ -18,13 +18,13 @@ html += "<h1>Hola mundo</h1>\n"
 html += "</body>\n"
 html += "</html>\n"
 
-#Escribimos en el fichero
+# Escribimos en el fichero
 manejador.write(html)
 manejador.close()
 
 print("\n *** Documento HTML creado con exito ***")
 
-#Leemos el fichero 
+# Leemos el fichero
 print("\n *** Ahora vamos a leer el archivo con la funcion r ***")
 
 manejador = open("index.html", "r")
@@ -33,7 +33,7 @@ contenido = manejador.read()
 print(contenido)
 manejador.close()
 
-#Leemos el fichero linea a linea a traves de un bucle for
+# Leemos el fichero linea a linea a traves de un bucle for
 manejador = open("index.html", "r")
 for linea in manejador: 
     print(linea, end="") 

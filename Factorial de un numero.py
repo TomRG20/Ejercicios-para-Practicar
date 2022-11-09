@@ -5,7 +5,6 @@
 # 3! = 1 * 2 * 3
 # 4! = 1 * 2 * 3 * 4
 # :
-# :
 # n! = 1 * 2 ** 3 * 4 * ... * n-1 * n
 
 def factorialFun(n):
@@ -19,5 +18,6 @@ def factorialFun(n):
         product *= i
     return product
 
-for n in range(1, 6): # testing
+
+for n in range(1, 6):  # testing
     print(n, factorialFun(n))

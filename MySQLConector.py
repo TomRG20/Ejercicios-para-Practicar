@@ -37,7 +37,6 @@ for x in mycursor2:
 #Ahora tengo que insertar 1 tupla de datos 
 sql = "INSERT INTO human (names, surName) VALUES (%s, %s)"
 val = ("Paco", "Ramirez")
-
 mycursor2.execute(sql, val)
 mydb2.commit() #es requerido para hacer cambios
 print(" ", mycursor2.rowcount, " Tupla Insertada...", end="\n")
@@ -68,3 +67,5 @@ myresult = mycursor2.fetchall()
 
 for x in myresult:
     print(x)
+
+mydb2.close() #cierra la conexion con la BD
