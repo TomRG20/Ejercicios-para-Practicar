@@ -19,5 +19,5 @@ def factorialFun(n):
     return product
 
 
-for n in range(1, 6):  # testing
+for n in range(0, 6):  # testing
     print(n, factorialFun(n))

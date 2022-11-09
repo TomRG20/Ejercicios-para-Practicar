@@ -1,6 +1,7 @@
 # program taken from http://stackoverflow.com/questions/4969543/colour-chart-for-tkinter-and-tix-using-python
 #
-from tkinter import *
+import tkinter as tk
+from tkinter import E, W, ttk
 
 MAX_ROWS = 36
 FONT_SIZE = 10 # (pixels)
@@ -82,12 +83,12 @@ COLORS = ['snow', 'ghost white', 'white smoke', 'gainsboro', 'floral white', 'ol
     'gray84', 'gray85', 'gray86', 'gray87', 'gray88', 'gray89', 'gray90', 'gray91', 'gray92',
     'gray93', 'gray94', 'gray95', 'gray97', 'gray98', 'gray99']
 
-root = Tk()
+root = tk.Tk()
 root.title("Named colour chart")
 row = 0
 col = 0
 for color in COLORS:
-  e = Label(root, text=color, background=color, 
+  e = ttk.Label(root, text=color, background=color, 
         font=(None, -FONT_SIZE))
   e.grid(row=row, column=col, sticky=E+W)
   row += 1
@@ -96,3 +97,5 @@ for color in COLORS:
     col += 1
 
 root.mainloop()
+
+

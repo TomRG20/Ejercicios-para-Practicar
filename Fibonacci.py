@@ -4,6 +4,7 @@
 #    the second is also equal to one (Fib2 = 1)
 #    every subsequent number is the sum of the two preceding numbers (Fibi = Fibi-1 + Fibi-2)
 
+
 def fib(n):
     if n < 1:
          return None
@@ -17,6 +18,17 @@ def fib(n):
         elem1, elem2 = elem2, sum
     return sum
 
-for n in range(1, 10): # testing
-    print(n, "->", fib(n))
+for n in range(-1, 10): # testing
+    print(f'{n} -> {fib(n)}', end='; ')
 
+print('\n') 
+
+#funcion recursiva
+def fib2(n):
+    if n <= 1: 
+        return n 
+    else:
+        return(fib2(n - 1) + fib2(n - 2))
+
+for n in range(-1, 10): # testing
+    print(f'{n} -> {fib2(n)}', end='; ')

@@ -1,0 +1,2 @@
+Esto es la captura de lo que has escrito: 
+(Mayus) h (Mayus) ola  que  tal (UP) ? (\n)  (UP) Espero  que  bien (\n)  (tab) si  yo  tambien (ctrl)  (<-) 
