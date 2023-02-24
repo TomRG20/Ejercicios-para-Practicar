@@ -3,6 +3,9 @@
     Autor: Tomás
     Versión: 1.0
     Fecha: 24/02/23    
+
+    Nota: Para que este código funcione habría que darle permisos de administrador, o 
+    ejecutarlo con tales permisos, sino no hara nada. 
 """
 
 import os
@@ -26,7 +29,7 @@ def Reiniciar():
     os.system("shutdown /r /t 0") # /r es para reiniciar el sistema
 
 def CambiarUsu():
-    os.system("shutdown -l /t 1 /d [p]") # /l es para cerrar la sesion del usuario, el 1 es el tiempo (t) en segundos que tardará. 
+    os.system("shutdown -l /t 1 ") # /l es para cerrar la sesion del usuario, el 1 es el tiempo (t) en segundos que tardará. 
 
 """ Uso: shutdown [/i | /l | /s | /sg | /r | /g | /a | /p | /h | /e | /o] [/hybrid] [/soft] [/fw] [/f]
     [/m \\equipo][/t xxx][/d [p|u:]xx:yy [/c "comentario"]]
