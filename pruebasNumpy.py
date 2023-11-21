@@ -42,3 +42,14 @@ m = np.random.random(5)
 print(m, end="\n")
 
 
+#condicionales Where y Select
+b = a.copy() 
+print(f"\n\n {b}")
+
+w = np.where((b > 20), b * 2 , "No es mayor que 20" )  
+print("Where: ", w, "\n", sep="") 
+
+
+s = np.select((b < 9),[True, "Menor que 9", "Igual que 9", True, False, True]  , default = "Mayor que 9 ")
+print("\nSelect:", s,"\n", sep="")
+
