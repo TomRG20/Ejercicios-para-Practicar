@@ -74,6 +74,96 @@ print("\nEliminar una columna ----------------")
 del d["experiencia"]
 print(d)
 
-dffichero = pd.read_csv("fichero.csv", sep="[,;:|_]", engine="python")
+print("\nLeer un fichero csv ----------------")
+dffichero = pd.read_csv("speedTest.csv", sep="[,:|]", engine="python")
+print(dffichero)
+
+#conseguiremos filas a partir de indices de tipo string
+print("\nAtributo loc ----------------")
+d2 = pd.DataFrame(diEmpleados)
+#creo indices a mi gusto
+d2 = pd.DataFrame(diEmpleados, index=['a','b','c','d','e'])
+
+print('\n', d2)
+
+print('\n', d2.loc['a'])
+
+print('\n', d2.loc['b':'d'])
+
+print('\n', d2.loc['b':'d', ['nombre','puesto']])
+
+#  int   -  String
+#  iLoc  -   Loc
+
+print("\nAtributo iLoc ----------------")
+d3 = pd.DataFrame(diEmpleados, index=[0,1,2,3,4])
+
+print('\n', d3)
+
+print('\n', d3.iloc[1])
+
+print('\n', d3.iloc[1:4])
+
+print('\n', d3.iloc[1:4, [0,2]])
+print('\n', d3.iloc[1:4] [['nombre','email','puesto']])
+
+print("\nCondicionales ----------------")
+d4 = pd.DataFrame(diEmpleados, index=[0,1,2,3,4])
+print('\n', d4)
+print('\n', d4[(d4['puesto']=='Contable')])
+print('\n', d4[(d4['puesto']=='Contable')]['nombre'])
+
+print('\n', d4[(d4['envacaciones']==True)])
+print('\n', d4[(d4['envacaciones']==True)]['nombre'])
+
+# or = | 
+# and = & 
 
 
+print("\nOrdenamiento ----------------")
+dOrdenado = pd.read_csv("speedTest.csv", sep="[,:|]", engine="python")
+print(dOrdenado)
+
+#las 5 descargas más lentas
+print('\n', dOrdenado.sort_values(by='Downspeed').head(5))
+
+#las 3 subidas más rápidas
+print('\n', dOrdenado.sort_values(by='Upspeed').tail(3))
+print('\n', dOrdenado.sort_values(by='Upspeed', ascending=False).head(3))
+
+print("\nBusqueda por rangos ----------------")
+dOrdenado2 = pd.read_csv("speedTest.csv", sep="[,:|]", engine="python")
+print(dOrdenado2)
+
+print(dOrdenado2[ (dOrdenado2['Downspeed'] >= 240) & (dOrdenado['Downspeed'] <= 260) ])
+print(dOrdenado2[ dOrdenado2["Downspeed"].between(240, 260)])
+
+print(dOrdenado2[ (dOrdenado2["Downspeed"].between(240, 260)) & (dOrdenado2["Upspeed"].between(130, 140))])
+
+
+print("\nBusqueda entre opciones ----------------")
+d4 = pd.DataFrame(diEmpleados, index=[0,1,2,3,4])
+print('\n', d4)
+
+
+puesto = ["Abogada","Jefe de departamento","Contable"]
+print('\n', d4[(d4['puesto'].isin(puesto))])
+
+print('\n', d4[(d4['envacaciones']==True) & (d4['puesto'].isin(puesto))])
+
+
+print("\nMétodos de strings ----------------")
+d4 = pd.DataFrame(diEmpleados, index=[0,1,2,3,4])
+print('\n', d4)
+print('\n', d4[d4['puesto'].str.startswith('A')])
+
+print('\n', d4[d4['nombre'].str.contains('a')])
+
+print('\n', d4[d4['nombre'].str.endswith('a')])
+
+
+print("\nAgrupación ----------------")
+d4 = pd.DataFrame(diEmpleados, index=[0,1,2,3,4])
+print('\n', d4)
+
+print('\n', d4.groupby('envacaciones')['envacaciones'].count())
